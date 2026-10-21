@@ -25,7 +25,8 @@ jobs:
           mkdir www
           cp index.html www/
           npm init -y
-          npm install @capacitor/core @capacitor/cli @capacitor/android
+          npm install @capacitor/core @capacitor/cli @capacitor/android pdfjs-dist@3.11.174 jszip mammoth
+          cp node_modules/pdfjs-dist/build/pdf.min.js node_modules/pdfjs-dist/build/pdf.worker.min.js node_modules/jszip/dist/jszip.min.js node_modules/mammoth/mammoth.browser.min.js www/
           npx cap init app com.joel.vibes --web-dir www
           npx cap add android
           npx cap sync android
